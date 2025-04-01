@@ -54,6 +54,11 @@ Subscripting : Extracting particular character or multiple cgaracters from a str
                         print(s[0]) // output : h
                       or print("hello"[0])
 
+# type() : returns the type of data
+         Example :name = "akash"
+                 type(name) // <class, 'str'> 
+
+
 1️⃣ Numeric Types (3)
 int → Integer numbers (10, -5, 1000)
 
@@ -314,11 +319,49 @@ Optimizing Memory	list → tuple	Tuples are faster
 
 ## Coding Exercise :
 
-INput two digit number and print the sum of these two digits.
+1- Input two digit number and print the sum of these two digits.
 
 # solution : s1 = input("Enter 2 digit number\n");
 num1 = int(s1[0])
 num2 = int(s1[1])
 
 print(f"sum of 2 digits is : {num1+num2}")
+
+2- BMI Calculator
+Solution :
+ s1 = float(input("Enter your height in m\n"))
+weight = float(input("Enter your weight in kg\n"))
+
+print("BMI is : ",round(weight/(s1*s1)) )
+
+** floor division value : print(8 // 3) returns 2.
+** print(round(8/3)) : prints 3.(rounds of 2.66)
+** print(round(2.666666,3))
+
+3- Print the age entered in days,months,weeks
+
+Solution :
+Age = input("Enter your age\n")
+age_left = 90 - int(Age)
+months_left = age_left*12
+days_left = age_left*365
+weeks_left = age_left*51
+print(f"you have {days_left} Days,{months_left} Months,{weeks_left} Weeks")
+
+4- Tip Calculator :
+
+print("Welcome to the tip calculator")
+bill = float(input("please enter the bill amount $\n"))
+tip = int(input("please enter the tip percentage 5,10,12,15 \n "))
+people = int(input("no of people the bill will split in \n"))
+
+tip_percent = round((bill * (tip/100)),2)
+print(tip_percent)
+total_amount = float(bill + tip_percent)
+print(total_amount)
+
+individual_amount = round((total_amount/people),2) # round does not always displays result in 2 precision. Also round only affects the display but internally float still stores the original value.
+
+print(f"amount for each : ${individual_amount:.2f}") #formatfunction ":.2f" makes surethe precision.
+
 

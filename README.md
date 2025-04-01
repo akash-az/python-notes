@@ -192,4 +192,133 @@ print(mv[0])  # 72 (ASCII for 'H')
 7. None Type
 # NoneType (absence of value)
 x = None  
-print(type(x))  # <class 'NoneType'> 
+print(type(x))  # <class 'NoneType'>
+
+
+
+### TYPE CASTING
+
+Scenario: Taking User Input (String to Integer/Float)
+Problem:
+User input is always a string. We need to convert it into a number for calculations.
+
+price = input("Enter product price: ")  # User enters "500"
+tax = input("Enter tax percentage: ")   # User enters "10"
+
+# Convert input from string to float for calculation
+price = float(price)
+tax = float(tax)
+
+total_price = price + (price * tax / 100)
+print(f"Total price after tax: {total_price}")
+🔹 Explanation:
+✅ input() returns a string → Convert it to float for calculation.
+✅ Without conversion, Python would raise an error when trying to perform arithmetic.
+
+2️⃣ Scenario: Rounding Off a Decimal Value (Float to Integer)
+Problem:
+We get float values from calculations, but we need a rounded whole number.
+
+total_marks = 485.75
+rounded_marks = int(total_marks)  # Truncate decimal part
+
+print(f"Final Marks (Rounded): {rounded_marks}")
+🔹 Explanation:
+✅ int() removes the decimal part (not rounding, just truncation).
+✅ If rounding is needed, use round() instead:
+
+print(round(485.75))  # Output: 486
+3️⃣ Scenario: Combining Strings and Numbers (Number to String)
+Problem:
+Python does not allow direct string + number concatenation.
+
+age = 25
+message = "I am " + str(age) + " years old."  # Convert int to str
+
+print(message)  
+🔹 Explanation:
+✅ str(age) converts 25 to "25", allowing string concatenation.
+✅ Without conversion, Python throws an error.
+
+4️⃣ Scenario: Removing Duplicates from a List (List to Set)
+Problem:
+A list may have duplicate items. We need a unique collection.
+
+students = ["Akash", "Rohan", "Akash", "Neha", "Rohan"]
+unique_students = list(set(students))  # Convert list → set (removes duplicates) → list
+
+print(unique_students)  
+🔹 Explanation:
+✅ set() removes duplicates.
+✅ list(set()) converts it back to a list.
+
+5️⃣ Scenario: Using dict() for Key-Value Pair Conversion
+Problem:
+Data from an API or file may come in list of tuples, which we need as a dictionary.
+
+student_data = [("name", "Akash"), ("age", 22), ("course", "MCA")]
+student_dict = dict(student_data)
+
+print(student_dict)  # {'name': 'Akash', 'age': 22, 'course': 'MCA'}
+🔹 Explanation:
+✅ dict() converts [(key, value)] pairs into a dictionary.
+
+6️⃣ Scenario: Iterating Over a Range (String to Integer)
+Problem:
+A program takes input for the number of iterations but input() returns a string.
+
+num = input("Enter how many times to print: ")  # "3"
+num = int(num)  # Convert to int
+
+for i in range(num):
+    print("Hello, Python!")
+🔹 Explanation:
+✅ int(num) allows range(num) to work.
+✅ Without conversion, Python throws an error.
+
+7️⃣ Scenario: Extracting Numeric Data from Strings (String to Float)
+Problem:
+We get numeric values as part of strings, but we need them as numbers.
+
+text = "The price is 299.99 dollars"
+price = float(text.split()[3])  # Extract "299.99" and convert to float
+
+print(f"Extracted Price: {price}")  
+🔹 Explanation:
+✅ text.split()[3] → Extracts "299.99" as a string.
+✅ float() converts it to a number.
+
+8️⃣ Scenario: Saving Memory Using tuple() (List to Tuple)
+Problem:
+Lists use more memory than tuples. If data is fixed, use tuples.
+
+months_list = ["Jan", "Feb", "Mar", "Apr"]
+months_tuple = tuple(months_list)
+
+print(months_tuple)  # ('Jan', 'Feb', 'Mar', 'Apr')
+🔹 Explanation:
+✅ Tuples are faster and memory-efficient compared to lists.
+✅ Use tuple() when data won’t change.
+
+🚀 Summary of Practical Use Cases
+Scenario	From → To	Why?
+User Input Conversion	str → int/float	For mathematical operations
+Rounding Off	float → int	To remove decimals
+String Concatenation	int → str	To combine numbers with strings
+Removing Duplicates	list → set → list	To get unique elements
+Creating a Dictionary	list of tuples → dict	To structure data
+Looping with Input	str → int	range() needs integers
+Extracting Numbers from Text	str → float	To perform calculations
+Optimizing Memory	list → tuple	Tuples are faster
+
+
+## Coding Exercise :
+
+INput two digit number and print the sum of these two digits.
+
+# solution : s1 = input("Enter 2 digit number\n");
+num1 = int(s1[0])
+num2 = int(s1[1])
+
+print(f"sum of 2 digits is : {num1+num2}")
+

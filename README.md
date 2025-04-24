@@ -365,3 +365,6 @@ individual_amount = round((total_amount/people),2) # round does not always displ
 print(f"amount for each : ${individual_amount:.2f}") #formatfunction ":.2f" makes surethe precision.
 
 
+
+
+## Memory Management in python
